@@ -1,0 +1,39 @@
+<h3 class="text-center">Chicago City !</h3>
+<br>
+
+<div class="table-responsive text-nowrap">
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">2010</th>
+        <th scope="col">2011</th>
+        <th scope="col">2012</th>
+        <th scope="col">2013</th>
+        <th scope="col">2014</th>
+        <th scope="col">2015</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let crime of crimes">
+        <td>{{crime.description}}</td>
+        <td>{{crime.involvement_1}}</td>
+        <td>{{crime.sex_1}}</td>
+        <td>{{crime.report_no}}</td>
+        <td>{{crime.involvement_1}}</td>
+        <td>{{crime.offense}}</td>
+        <td>{{crime.reported_time}}</td>
+
+
+      </tr>
+
+
+    </tbody>
+  </table>
+
+
+</div>
