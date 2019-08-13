@@ -18,14 +18,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let crime of crimes">
-
+    <tr *ngFor="let crime of crimes | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
         <td>{{crime.description}}</td>
 
         <td>{{crime.sex_1}}</td>
         <td>{{crime.report_no}}</td>
         <td>{{crime.involvement_1}}</td>
-
+        <td>{{crime.zzip_code_1ip}}</td>
+        <td>{{crime.zip_code_1}}</td>
         <td>{{crime.reported_time}}</td>
         <td>{{crime.reported_date}}</td>
 
@@ -35,6 +35,7 @@
 
     </tbody>
   </table>
+  <ngb-pagination class="d-flex justify-content-end" [rotate]="true" [collectionSize]="crimes.length" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
 
 
 </div>

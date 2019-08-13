@@ -7,11 +7,11 @@ import { ICrime } from './Crime';
   providedIn: "root"
 })
 export class DataService {
-  private _url = "https://data.kcmo.org/resource/yu5f-iqbp.json?%24limit=10";
-  // https://data.kcmo.org/resource/kbzx-7ehe.json?location_1_zip=FOO
+  private _url = "https://data.kcmo.org/resource/yu5f-iqbp.json";
   constructor(private http: HttpClient) {}
 
-  getCrimes(): Observable<ICrime[]> {
-    return this.http.get<ICrime[]>(this._url);
+  getCrimes(url: any): Observable<ICrime[]> {
+    console.log("url: " + url);
+    return this.http.get<ICrime[]>(url);
   }
 }

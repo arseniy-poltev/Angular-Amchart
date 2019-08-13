@@ -1,4 +1,3 @@
-
 <h3 class="text-center">Sanfrancisco City !</h3>
 <br>
 
@@ -7,34 +6,29 @@
 
   <table class="table table-hover">
     <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">2010</th>
-        <th scope="col">2011</th>
-        <th scope="col">2012</th>
-        <th scope="col">2013</th>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">2010</th>
+      <th scope="col">2011</th>
+      <th scope="col">2012</th>
+      <th scope="col">2013</th>
 
 
-
-      </tr>
+    </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let crime of crimes">
-        <td>{{crime.description}}</td>
-        <td>{{crime.involvement_1}}</td>
-        <td>{{crime.sex_1}}</td>
-        <td>{{crime.report_no}}</td>
-
-
-        <td>{{crime.reported_time}}</td>
-
-
-
-      </tr>
-
-
+    <tr *ngFor="let crime of crimes | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+      <td>{{crime.description}}</td>
+      <td>{{crime.involvement_1}}</td>
+      <td>{{crime.sex_1}}</td>
+      <td>{{crime.report_no}}</td>
+      <td>{{crime.zip_code_1}}</td>
+      <td>{{crime.zip_code_1}}</td>
+      <td>{{crime.reported_time}}</td>
+    </tr>
     </tbody>
   </table>
+  <ngb-pagination class="d-flex justify-content-end" [rotate]="true" [collectionSize]="crimes.length" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
 
 
 </div>

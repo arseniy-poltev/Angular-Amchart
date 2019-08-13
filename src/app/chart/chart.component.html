@@ -1,3 +1,62 @@
+<app-nav></app-nav>
+<section class="intro-single">
+  <div class="container">
+  </div>
+</section>
+<section class="property-single nav-arrow-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <form class="form-inline text-center" [formGroup]="formGroup" (submit)="handleCompage()">
+          <label for="city_1">Select 1st City:</label>
+          <select id="city_1" class="form-control" formControlName="city_1">
+            <option value="kansas">Kansas</option>
+            <option value="chicago">Chicago</option>
+            <option value="new_york">New York</option>
+            <option value="san_fransisco">San Francisco</option>
+          </select>
+          <label for="city_2" class="ml-5">Select 2st City:</label>
+          <select id="city_2" class="form-control" formControlName="city_2">
+            <option value="kansas">Kansas</option>
+            <option value="chicago">Chicago</option>
+            <option value="new_york">New York</option>
+            <option value="san_fransisco">San Francisco</option>
+          </select>
+          <button type="submit" class="btn btn-primary mr-5">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-5">
+        <div style="display: block;">
+          <canvas baseChart width="400" height="400"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins">
+          </canvas>
+        </div>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-5">
+        <div style="display: block;">
+          <canvas baseChart width="400" height="400"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins">
+          </canvas>
+        </div>
+      </div>
+    </div>
 
 
-<h1>Still working on it.... comming soon!</h1>
+  </div>
+</section>
+<app-footer></app-footer>

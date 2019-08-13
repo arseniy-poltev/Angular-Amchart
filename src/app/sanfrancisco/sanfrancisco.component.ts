@@ -8,11 +8,15 @@ import { DataService } from "../data.service";
 })
 export class SanfranciscoComponent implements OnInit {
   public crimes = [];
-  constructor(private _dataService: DataService) {}
+  public page = 1;
+  public pageSize = 10;
+  public collectionSize = 0;
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this._dataService.getCrimes().subscribe(data => {
+    this.dataService.getCrimes().subscribe(data => {
       this.crimes = data;
+      this.collectionSize = data.length;
     });
   }
 }
